@@ -1,0 +1,33 @@
+﻿<Window x:Class="MineManagementWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MineManagementWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="450"
+        Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        Background="#183780"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Grid.Column="0" LastChildFill="False">
+            <TextBlock Name="timeTextBlock" Foreground="Snow" DockPanel.Dock="Left" VerticalAlignment="Center" FontFamily="{StaticResource Vazir}" FontSize="16" Margin="10,0,0,0">زمان</TextBlock>
+            <TextBlock Name="VIdTextBlock" Foreground="Snow" DockPanel.Dock="Right" VerticalAlignment="Center" FontFamily="{StaticResource Vazir}" FontSize="16" Margin="0,0,10,0">VId</TextBlock>
+        </DockPanel>
+
+        <Grid Margin="0,10,0,0" Grid.Row="1">
+            <Frame Name="contentFrame" NavigationUIVisibility="Hidden"/>
+        </Grid>
+    </Grid>
+</Window>

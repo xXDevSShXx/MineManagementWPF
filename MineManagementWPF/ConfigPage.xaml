@@ -1,0 +1,60 @@
+﻿<Page x:Class="MineManagementWPF.ConfigPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MineManagementWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ConfigPage"
+      Loaded="Page_Loaded">
+
+    <Grid Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Margin="20 ,10" Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="7*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Snow" Text="Sender Timer Interval" Grid.Row="0" Grid.Column="0"/>
+                <TextBox VerticalContentAlignment="Center" Name="intervalTextBox" Grid.Row="0" Grid.Column="1" Margin="0,10"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Snow" Text="Vehicle ID" Grid.Row="1" Grid.Column="0"/>
+                <TextBox VerticalContentAlignment="Center" Name="vehicleIDTextBox" Grid.Row="1" Grid.Column="1" Margin="0,10"/>
+
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button Name="saveChangesButton" Click="saveChangesButton_Click" Content="Save Changes" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

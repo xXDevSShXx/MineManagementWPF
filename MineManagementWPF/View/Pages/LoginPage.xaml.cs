@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MineManagementWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MineManagementWPF
+namespace MineManagementWPF.View.Pages
 {
     /// <summary>
     /// Interaction logic for LoginPage.xaml
@@ -39,13 +40,13 @@ namespace MineManagementWPF
         {
             if ((string)userNameLabel.Content == "000000")
             {
-                ViewModel.Instance.CurrentPage = new ConfigPage();
+                MainViewModel.Instance.CurrentPage = new ConfigPage();
             }
             userNameLabelBorder.BorderBrush = new SolidColorBrush(Colors.Snow);
             bool condition = true;
             if (condition)
             {
-                ViewModel.Instance.CurrentPage = new ManagePage();
+                MainViewModel.Instance.CurrentPage = new ManagePage();
             }
             else
             {

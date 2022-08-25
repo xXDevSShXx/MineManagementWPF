@@ -1,4 +1,4 @@
-﻿<Page x:Class="MineManagementWPF.ManagePage"
+﻿<Page x:Class="MineManagementWPF.View.Pages.ManagePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -28,8 +28,8 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Frame Source="StatusPage.xaml" NavigationUIVisibility="Hidden"/>
@@ -45,25 +45,25 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Style="{StaticResource Button}">
-                <Image Source="MineManagementWPF;component/Assets/exit_icon.png"/>
+                <Image Source="/Assets/exit_icon.png"/>
             </Button>                                                          
             <Button Grid.Column="1" Style="{StaticResource Button}">
-                <Image Source="MineManagementWPF;component/Assets/mode_icon.png"/>
+                <Image Source="/Assets/mode_icon.png"/>
             </Button>                                                          
             <Button Grid.Column="2" Style="{StaticResource Button}">
-                <Image Source="MineManagementWPF;component/Assets/problem_icon.png"/>
+                <Image Source="Assets/problem_icon.png"/>
             </Button>                                                          
             <Button Grid.Column="3" Style="{StaticResource Button}">
-                <Image Source="MineManagementWPF;component/Assets/unloading_icon.png"/>
+                <Image Source="/Assets/unloading_icon.png"/>
             </Button>                                                          
             <Button Grid.Column="4" Style="{StaticResource Button}">
-                <Image Source="MineManagementWPF;component/Assets/stop_icon.png"/>
+                <Image Source="/Assets/stop_icon.png"/>
             </Button>                                                          
             <Button Grid.Column="5" Style="{StaticResource Button}">
-                <Image Source="MineManagementWPF;component/Assets/sos_icon.png"/>
+                <Image Source="/Assets/sos_icon.png"/>
             </Button>                                                          
             <Button Grid.Column="6" Style="{StaticResource Button}">
-                <Image Source="MineManagementWPF;component/Assets/home_icon.png"/>
+                <Image Source="/Assets/home_icon.png"/>
             </Button>                                                          
         </Grid>
     </Grid>

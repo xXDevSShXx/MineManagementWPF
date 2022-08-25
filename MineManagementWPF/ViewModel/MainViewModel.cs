@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace MineManagementWPF
+namespace MineManagementWPF.ViewModels
 {
-    public class ViewModel : INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged
     {
-        public static ViewModel Instance { get; set;}
+        public static MainViewModel Instance { get; set;}
 
         private Page currentPage;
 

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MineManagementWPF
+namespace MineManagementWPF.View.Pages
 {
     /// <summary>
     /// Interaction logic for ConfigPage.xaml

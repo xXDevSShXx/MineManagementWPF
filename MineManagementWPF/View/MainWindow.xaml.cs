@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using MineManagementWPF.View.Pages;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MineManagementWPF.ViewModels;
 
-namespace MineManagementWPF
+namespace MineManagementWPF.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -26,12 +28,12 @@ namespace MineManagementWPF
         {
             InitializeComponent();
 
-            ViewModel.Instance = new ViewModel();
+            MainViewModel.Instance = new MainViewModel();
 
-            DataContext = ViewModel.Instance;
+            DataContext = MainViewModel.Instance;
 
             Binding binding = new Binding("CurrentPage");
-            binding.Source = ViewModel.Instance;
+            binding.Source = MainViewModel.Instance;
 
             contentFrame.SetBinding(Frame.ContentProperty, binding);
 
@@ -49,7 +51,7 @@ namespace MineManagementWPF
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             UITimer.Change(0, 1000);
-            ViewModel.Instance.CurrentPage = new LoginPage();
+            MainViewModel.Instance.CurrentPage = new LoginPage();
         }
     }
 }

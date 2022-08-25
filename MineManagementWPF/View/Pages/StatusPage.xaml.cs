@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MineManagementWPF
+namespace MineManagementWPF.View.Pages
 {
     /// <summary>
     /// Interaction logic for StatusPage.xaml
@@ -24,15 +24,30 @@ namespace MineManagementWPF
         public StatusPage()
         {
             InitializeComponent();
+
+            motevafeghStatusButton.IsChecked = true;
         }
 
+        bool working;
         private void ToggleButtons_Checked(object sender, RoutedEventArgs e)
         {
+            working = true;
             ToggleButton toggleButton = sender as ToggleButton;
             togglesButtonsGrid.Children.OfType<ToggleButton>().Where(i => !i.Equals(toggleButton)).ToList().ForEach(toggle =>
               {
                   toggle.IsChecked = false;
               });
+            toggleButton.IsChecked = true;
+            working = false;
+        }
+
+        private void ToggleButtons_UnChecked(object sender, RoutedEventArgs e)
+        {
+            ToggleButton toggleButton = sender as ToggleButton;
+            if (!working)
+            {
+                toggleButton.IsChecked = true;
+            }
         }
     }
 }

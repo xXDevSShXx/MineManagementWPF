@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MineManagementWPF
+namespace MineManagementWPF.View.Pages
 {
     /// <summary>
-    /// Interaction logic for ManagePage.xaml
+    /// Interaction logic for StopsPage.xaml
     /// </summary>
-    public partial class ManagePage : Page
+    public partial class StopsPage : Page
     {
-        public ManagePage()
+        public StopsPage()
         {
             InitializeComponent();
         }

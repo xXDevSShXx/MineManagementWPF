@@ -8,20 +8,20 @@ using System.Windows.Controls;
 
 namespace MineManagementWPF.ViewModel
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class ManagePageVM  :INotifyPropertyChanged
     {
-        public static MainViewModel Instance { get; set;}
+        public static ManagePageVM Instance { get; set; }
 
         private Page currentPage;
 
         public Page CurrentPage
         {
             get
-            { 
-                return currentPage; 
+            {
+                return currentPage;
             }
-            set 
-            { 
+            set
+            {
                 currentPage = value;
                 NotifyPropertyChanged("CurrentPage");
             }
@@ -30,10 +30,19 @@ namespace MineManagementWPF.ViewModel
 
         public void NotifyPropertyChanged(string propname)
         {
-            if(PropertyChanged != null)
+            if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propname));
         }
-         
+
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public ManagePageVM()
+        {
+
+        }
+        public ManagePageVM(Page page)
+        {
+            CurrentPage = page;
+        }
     }
 }

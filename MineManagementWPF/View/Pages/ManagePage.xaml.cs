@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MineManagementWPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,20 @@ namespace MineManagementWPF.View.Pages
         public ManagePage()
         {
             InitializeComponent();
+
+            ManagePageVM.Instance = new ManagePageVM(new StatusPage());
+
+            DataContext = ManagePageVM.Instance;
+
+            Binding binding = new Binding("CurrentPage");
+            binding.Source = ManagePageVM.Instance;
+
+            contentFrame.SetBinding(Frame.ContentProperty, binding);
+        }
+
+        private void stopButton_Click(object sender, RoutedEventArgs e)
+        {
+            ManagePageVM.Instance.CurrentPage = new StopsPage();
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MineManagementWPF.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +30,15 @@ namespace MineManagementWPF.View.Pages
         private void saveChangesButton_Click(object sender, RoutedEventArgs e)
         {
             Properties.Settings.Default.VehicleID = vehicleIDTextBox.Text;
-            Properties.Settings.Default.Interval = vehicleIDTextBox.Text;
+            Properties.Settings.Default.Interval = int.Parse(intervalTextBox.Text);
+            Properties.Settings.Default.PortName = portNameComboBox.SelectedItem.ToString();
             Properties.Settings.Default.Save();
+
+            MainWindow newMainWindow = new MainWindow();
+            MainWindow oldMainWindow = (MainWindow)App.Current.Windows[0];
+            App.Current.MainWindow = newMainWindow;
+            newMainWindow.Show();
+            oldMainWindow.Close();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -38,7 +47,9 @@ namespace MineManagementWPF.View.Pages
             intervalTextBox.FontSize = intervalTextBox.ActualHeight / 2;
             saveChangesButton.FontSize = saveChangesButton.ActualHeight / 8;
             vehicleIDTextBox.Text = Properties.Settings.Default.VehicleID;
-            intervalTextBox.Text = Properties.Settings.Default.Interval;
+            intervalTextBox.Text = Properties.Settings.Default.Interval.ToString();
+            portNameComboBox.ItemsSource = SerialPort.GetPortNames();
+            portNameComboBox.SelectedIndex = portNameComboBox.Items.IndexOf(Properties.Settings.Default.PortName);
         }
     }
 }

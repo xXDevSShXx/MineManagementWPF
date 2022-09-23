@@ -1,4 +1,5 @@
 ﻿using MineManagementWPF.Model;
+using MineManagementWPF.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -86,9 +87,10 @@ namespace MineManagementWPF.View.Pages
                     Tag = item,
                     Style = (Style)FindResource("RoundLabel2")
                 };
-                button.Click += (sender, e) =>
+                button.Click += async (sender, e) =>
                  {
-                     //send code to server
+                     var code = ((Item)((Button)sender).Tag).Code;
+                     await HttpRequestSender.POST(Settings.Default.StatusUrl, new System.Net.Http.StringContent(code.ToString(), Encoding.UTF8, "string/json"));
                  };
                 Grid.SetColumn(button, col);
                 Grid.SetRow(button, row);

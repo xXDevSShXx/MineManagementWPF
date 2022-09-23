@@ -9,7 +9,7 @@
       Title="StatusPage">
 
     <Page.Resources>
-        <Style x:Key="RoundButton" TargetType="ToggleButton">
+        <Style x:Key="RoundButton" TargetType="RadioButton">
             <Setter Property="FontFamily" Value="{StaticResource Vazir}"/>
             <Setter Property="Foreground" Value="Snow"/>
             <Setter Property="IsChecked" Value="False"/>
@@ -73,13 +73,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <ToggleButton Unchecked="ToggleButtons_UnChecked" Checked="ToggleButtons_Checked" FontSize="24" Name="safeBargiriStatusButton" Grid.Column="2" Grid.Row="1" Style="{StaticResource RoundButton}" Margin="6">صف بارگیری</ToggleButton>
-        <ToggleButton Unchecked="ToggleButtons_UnChecked" Checked="ToggleButtons_Checked" FontSize="24" Name="harekatBaBarStatusButton" Grid.Column="3" Grid.Row="1" Style="{StaticResource RoundButton}" Margin="6">حرکت با بار</ToggleButton>
-        <ToggleButton Unchecked="ToggleButtons_UnChecked" Checked="ToggleButtons_Checked" FontSize="24" Name="safeTakhlieStatusButton" Grid.Column="4" Grid.Row="1" Style="{StaticResource RoundButton}" Margin="6">صف تخلیه</ToggleButton>
-        <ToggleButton Unchecked="ToggleButtons_UnChecked" Checked="ToggleButtons_Checked" FontSize="24" Name="bargiriStatusButton" Grid.Column="2" Grid.Row="2" Style="{StaticResource RoundButton}" Margin="6">بارگیری</ToggleButton>
-        <ToggleButton Unchecked="ToggleButtons_UnChecked" Checked="ToggleButtons_Checked" FontSize="24" Name="motevafeghStatusButton" Grid.Column="3" Grid.Row="2" Style="{StaticResource RoundButton}" Margin="6">متوقف</ToggleButton>
-        <ToggleButton Unchecked="ToggleButtons_UnChecked" Checked="ToggleButtons_Checked" FontSize="24" Name="takhlieStatusButton" Grid.Column="4" Grid.Row="2" Style="{StaticResource RoundButton}" Margin="6">تخلیه</ToggleButton>
-        <ToggleButton Unchecked="ToggleButtons_UnChecked" Checked="ToggleButtons_Checked" FontSize="24" Name="harekatBedoneBarStatusButton" Grid.Column="3" Grid.Row="3" Style="{StaticResource RoundButton}" Margin="6">حرکت بدون بار</ToggleButton>
+        <RadioButton Tag="0" Checked="StatusButtons_Checked" FontSize="24" Name="safeBargiriStatusButton" Grid.Column="2" Grid.Row="1" Style="{StaticResource RoundButton}" Margin="6">صف بارگیری</RadioButton>
+        <RadioButton Tag="1" Checked="StatusButtons_Checked" FontSize="24" Name="harekatBaBarStatusButton" Grid.Column="3" Grid.Row="1" Style="{StaticResource RoundButton}" Margin="6">حرکت با بار</RadioButton>
+        <RadioButton Tag="2" Checked="StatusButtons_Checked" FontSize="24" Name="safeTakhlieStatusButton" Grid.Column="4" Grid.Row="1" Style="{StaticResource RoundButton}" Margin="6">صف تخلیه</RadioButton>
+        <RadioButton Tag="3" Checked="StatusButtons_Checked" FontSize="24" Name="bargiriStatusButton" Grid.Column="2" Grid.Row="2" Style="{StaticResource RoundButton}" Margin="6">بارگیری</RadioButton>
+        <RadioButton Tag="4" Checked="StatusButtons_Checked" FontSize="24" Name="motevafeghStatusButton" Grid.Column="3" Grid.Row="2" Style="{StaticResource RoundButton}" Margin="6">متوقف</RadioButton>
+        <RadioButton Tag="5" Checked="StatusButtons_Checked" FontSize="24" Name="takhlieStatusButton" Grid.Column="4" Grid.Row="2" Style="{StaticResource RoundButton}" Margin="6">تخلیه</RadioButton>
+        <RadioButton Tag="6" Checked="StatusButtons_Checked" FontSize="24" Name="harekatBedoneBarStatusButton" Grid.Column="3" Grid.Row="3" Style="{StaticResource RoundButton}" Margin="6">حرکت بدون بار</RadioButton>
 
         <Button Grid.Column="1" Grid.Row="2" Style="{StaticResource RoundLabel}" FontSize="24" Margin="6">مبدا</Button>
         <Button Grid.Column="5" Grid.Row="2" Style="{StaticResource RoundLabel}" FontSize="24" Margin="6">مقصد</Button>

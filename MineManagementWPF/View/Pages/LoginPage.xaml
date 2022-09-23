@@ -43,7 +43,7 @@
             <RowDefinition Height="1.5*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <Border Name="userNameLabelBorder" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" BorderBrush="Snow" BorderThickness="3">
+        <Border Name="userNameLabelBorder" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" BorderBrush="Snow" BorderThickness="3" Margin="10, 0">
             <Label Name="userNameLabel" Content="کد پرسنلی را وارد کنید" Grid.Row="0" Grid.Column="1" Margin="10" BorderBrush="Transparent"
                HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Snow" FontFamily="{StaticResource Vazir}" 
                FontSize="36"/>

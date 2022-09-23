@@ -21,10 +21,16 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
 
-        <DockPanel Grid.Row="0" Grid.Column="0" LastChildFill="False">
-            <TextBlock Name="timeTextBlock" Foreground="Snow" DockPanel.Dock="Left" VerticalAlignment="Center" FontFamily="{StaticResource Vazir}" FontSize="16" Margin="10,0,0,0">زمان</TextBlock>
-            <TextBlock Name="VIdTextBlock" Foreground="Snow" DockPanel.Dock="Right" VerticalAlignment="Center" FontFamily="{StaticResource Vazir}" FontSize="16" Margin="0,0,10,0">VId</TextBlock>
-        </DockPanel>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="timeTextBlock" Foreground="Snow" Grid.Column="0" VerticalAlignment="Center" TextAlignment="Left" FontFamily="{StaticResource Vazir}" FontSize="16" Margin="10,0,0,0">زمان</TextBlock>
+            <TextBlock Name="VIdTextBlock" Foreground="Snow" Grid.Column="1" VerticalAlignment="Center" TextAlignment="Center" FontFamily="{StaticResource Vazir}" FontSize="16" Margin="0,0,10,0">VId</TextBlock>
+            <TextBlock Name="userStatusTextBlock" Foreground="Snow" Grid.Column="2"   VerticalAlignment="Center" TextAlignment="Right" FontFamily="{StaticResource Vazir}" FontSize="16" Margin="0,0,10,0">وارد نشده</TextBlock>
+        </Grid>
 
         <Grid Margin="0,10,0,0" Grid.Row="1">
             <Frame Name="contentFrame" NavigationUIVisibility="Hidden"/>

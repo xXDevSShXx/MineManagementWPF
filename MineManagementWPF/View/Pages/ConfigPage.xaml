@@ -34,24 +34,27 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Snow" Text="Sender Timer Interval" Grid.Row="0" Grid.Column="0"/>
                 <TextBox VerticalContentAlignment="Center" Name="intervalTextBox" Grid.Row="0" Grid.Column="1" Margin="0,10"/>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Snow" Text="Vehicle ID" Grid.Row="1" Grid.Column="0"/>
                 <TextBox VerticalContentAlignment="Center" Name="vehicleIDTextBox" Grid.Row="1" Grid.Column="1" Margin="0,10"/>
-
+                
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Snow" Text="Port" Grid.Row="2" Grid.Column="0"/>
+                <ComboBox VerticalContentAlignment="Center" Name="portNameComboBox" Grid.Row="2" Grid.Column="1" Margin="0,5"/>
             </Grid>
             <Grid Grid.Row="1" Grid.Column="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="3*" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="6*" />
+                    <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
                 <Button Name="saveChangesButton" Click="saveChangesButton_Click" Content="Save Changes" Grid.Row="1" Grid.Column="1"/>
             </Grid>

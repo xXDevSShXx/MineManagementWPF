@@ -1,8 +1,12 @@
-﻿using MineManagementWPF.ViewModel;
+﻿using DotSpatial.Positioning;
+using MineManagementWPF.Properties;
+using MineManagementWPF.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;

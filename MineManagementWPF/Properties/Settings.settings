@@ -2,10 +2,22 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MineManagementWPF.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Interval" Type="System.String" Scope="User">
+    <Setting Name="Interval" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">4000</Value>
     </Setting>
     <Setting Name="VehicleID" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PortName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UserUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://localhost:7186/api/Users/</Value>
+    </Setting>
+    <Setting Name="LocationUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://localhost:7186/api/Locations/</Value>
+    </Setting>
+    <Setting Name="StatusUrl" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

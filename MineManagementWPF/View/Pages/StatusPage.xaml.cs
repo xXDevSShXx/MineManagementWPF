@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MineManagementWPF.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,27 +28,10 @@ namespace MineManagementWPF.View.Pages
 
             motevafeghStatusButton.IsChecked = true;
         }
-
-        bool working;
-        private void ToggleButtons_Checked(object sender, RoutedEventArgs e)
+        private async void StatusButtons_Checked(object sender, RoutedEventArgs e)
         {
-            working = true;
-            ToggleButton toggleButton = sender as ToggleButton;
-            togglesButtonsGrid.Children.OfType<ToggleButton>().Where(i => !i.Equals(toggleButton)).ToList().ForEach(toggle =>
-              {
-                  toggle.IsChecked = false;
-              });
-            toggleButton.IsChecked = true;
-            working = false;
-        }
-
-        private void ToggleButtons_UnChecked(object sender, RoutedEventArgs e)
-        {
-            ToggleButton toggleButton = sender as ToggleButton;
-            if (!working)
-            {
-                toggleButton.IsChecked = true;
-            }
+            var code = ((string)((RadioButton)sender).Tag);
+            await HttpRequestSender.POST(Settings.Default.StatusUrl, new System.Net.Http.StringContent(code.ToString(), Encoding.UTF8, "string/json"));
         }
     }
 }

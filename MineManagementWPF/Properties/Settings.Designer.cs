@@ -26,9 +26,9 @@ namespace MineManagementWPF.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("4000")]
-        public string Interval {
+        public int Interval {
             get {
-                return ((string)(this["Interval"]));
+                return ((int)(this["Interval"]));
             }
             set {
                 this["Interval"] = value;
@@ -44,6 +44,45 @@ namespace MineManagementWPF.Properties {
             }
             set {
                 this["VehicleID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PortName {
+            get {
+                return ((string)(this["PortName"]));
+            }
+            set {
+                this["PortName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:7186/api/Users/")]
+        public string UserUrl {
+            get {
+                return ((string)(this["UserUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:7186/api/Locations/")]
+        public string LocationUrl {
+            get {
+                return ((string)(this["LocationUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StatusUrl {
+            get {
+                return ((string)(this["StatusUrl"]));
             }
         }
     }

@@ -1,4 +1,6 @@
-﻿using MineManagementWPF.ViewModel;
+﻿using MineManagementApi.Models;
+using MineManagementWPF.Properties;
+using MineManagementWPF.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,21 +38,38 @@ namespace MineManagementWPF.View.Pages
             userNameLabel.Content = (string)userNameLabel.Content + (string)button.Content;
         }
 
-        private void OkButton_Click(object sender, RoutedEventArgs e)
+        private async void OkButton_Click(object sender, RoutedEventArgs e)
         {
+            if ((string)userNameLabel.Content == "کد پرسنلی را وارد کنید") return;
             if ((string)userNameLabel.Content == "000000")
             {
                 MainViewModel.Instance.CurrentPage = new ConfigPage();
             }
             userNameLabelBorder.BorderBrush = new SolidColorBrush(Colors.Snow);
-            bool condition = true;
-            if (condition)
+            try
             {
-                MainViewModel.Instance.CurrentPage = new ManagePage();
+                var result = await HttpRequestSender.POST(Settings.Default.UserUrl + "Login", new System.Net.Http.StringContent(userNameLabel.Content.ToString(), Encoding.UTF8, "text/json"));
+
+                if (result == null) return;
+                if (result.IsSuccessStatusCode)
+                {
+                    string json = await result.Content.ReadAsStringAsync();
+                    var dsjson = JsonConvert.DeserializeObject<User>(json);
+
+                    GlobalVM.CurrentUser = dsjson;
+                    GlobalVM.isLoggedIn = true;
+                    ((MainWindow)App.Current.Windows[0]).userStatusTextBlock.Text = $"{dsjson.firstName} {dsjson.lastName}";
+                    MainViewModel.Instance.CurrentPage = new ManagePage();
+                }
+                else
+                {
+                    userNameLabelBorder.BorderBrush = new SolidColorBrush(Colors.Red);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                userNameLabelBorder.BorderBrush = new SolidColorBrush(Colors.Red);
+                MessageBox.Show(ex.Message);
+                return;
             }
         }
 
